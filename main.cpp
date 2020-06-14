@@ -13,15 +13,32 @@ int get_level(){
         cout << "That is an invaild level \nLevel " << level << " doesn't exist" << endl;
         cout << "What is your player level? ";
         cin >> level;
+
+        if(isdigit(level) == false){
+            cout << endl << "Error: Input must be a number" << endl;
+            cin.clear();
+            cin.ignore(256,'\n');
+            cin >> level;
+        }
     }
 
     return level;
 }
 
 int get_distance(){
-    int distance;
-    cout << "What is the distance in km? ";
-    cin >> distance;
+    int distance = 0;
+
+    while(distance == 0){
+        cout << "What is the distance in km? ";
+        cin >> distance;
+
+        if(isdigit(distance) == false){
+            cout << endl << "Error: Input must be a number" << endl;
+            cin.clear();
+            cin.ignore(256,'\n');
+            cin >> distance;
+        }
+    }
 
     return distance;
 }
