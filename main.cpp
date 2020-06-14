@@ -1,5 +1,7 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
+
 
 int leveldist[] = {0,250,500,750,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000};
 
@@ -46,6 +48,7 @@ int main()
         calc();
         cout << "Do you want to calculate another one? ";
         cin >> ans;
+        transform(ans.begin(), ans.end(), ans.begin(), ::tolower);
     }
     cout << endl << "Program closing...";
     return 0;
