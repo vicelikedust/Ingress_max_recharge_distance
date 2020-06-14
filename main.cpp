@@ -10,7 +10,7 @@ int get_level(){
     cout << "What is your player level? ";
     cin >> level;
 
-    while(level == 0 || level == 17){
+    while(level == 0 || level >= 17){
         cout << "That is an invaild level \nLevel " << level << " doesn't exist" << endl;
         cout << "What is your player level? ";
         cin >> level;
