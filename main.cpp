@@ -2,7 +2,6 @@
 #include <algorithm>
 using namespace std;
 
-
 int leveldist[] = {0,250,500,750,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000};
 
 int get_level(){
@@ -26,7 +25,6 @@ int get_distance(){
 
     return distance;
 }
-
 
 void calc(){
     int efficiency;
