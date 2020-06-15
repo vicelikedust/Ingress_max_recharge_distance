@@ -33,7 +33,6 @@ int get_distance(){
 
     if(isdigit(buffer[256]) == false){
         distance = atoi(buffer);
-        cout << distance << endl;
     }
 
     return distance;
