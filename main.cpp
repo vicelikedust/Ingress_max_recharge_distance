@@ -26,18 +26,14 @@ int get_level(){
 }
 
 int get_distance(){
-    int distance = 0;
+    int distance;
+    char buffer[256];
+    cout << "What is the distance in km? ";
+    cin >> buffer;
 
-    while(distance == 0){
-        cout << "What is the distance in km? ";
-        cin >> distance;
-
-        if(isdigit(distance) == false){
-            cout << endl << "Error: Input must be a number" << endl;
-            cin.clear();
-            cin.ignore(256,'\n');
-            cin >> distance;
-        }
+    if(isdigit(buffer[256]) == false){
+        distance = atoi(buffer);
+        cout << distance << endl;
     }
 
     return distance;
