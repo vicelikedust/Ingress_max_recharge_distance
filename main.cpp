@@ -6,7 +6,7 @@ int leveldist[] = {0,250,500,750,1000,1250,1500,1750,2000,2250,2500,2750,3000,32
 
 int get_level(){
     int level;
-    cout << "What is your player level? ";
+    cout << "What is your player level? (1-16) ";
     cin >> level;
 
     while(level == 0 || level >= 17){
@@ -33,6 +33,8 @@ int get_distance(){
 
     if(isdigit(buffer[256]) == false){
         distance = atoi(buffer);
+    }else{
+        distance = buffer[256];
     }
 
     return distance;
