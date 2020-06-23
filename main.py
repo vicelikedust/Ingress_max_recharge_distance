@@ -1,4 +1,14 @@
+from os import system, name
+
 leveldist = [0,250,500,750,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000]
+
+def clear(): 
+    # for windows 
+    if name == 'nt': 
+        _ = system('cls') 
+    # for mac and linux
+    else: 
+        _ = system('clear') 
 
 def calc():
 	try:
@@ -23,14 +33,15 @@ def calc():
 		print(f'Portal is too far \nThe max distance for level {level} is {leveldist[level]}km')
 	else:
 		efficiency = 100 - (distance)/(5 * level)
-		print(f'{round(efficiency,2)}{"%"}')
+		print(f'Recharge Efficiency is {round(efficiency,2)}{"%"}')
 
 ans = 'yes'
-
-try:
-	while ans == 'yes' or ans =='y':
-		calc()
-		ans = input('Do you want to calculate another one? ').lower()
-except KeyboardInterrupt:
-    pass
-print('\nProgram Closing...')
+if __name__ == "__main__":
+    try:
+        while ans == 'yes' or ans =='y':
+            calc()
+            ans = input('Do you want to calculate another one? ').lower()
+            clear()
+    except KeyboardInterrupt:
+        pass
+    print('\nProgram Closing...')
