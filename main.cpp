@@ -53,7 +53,7 @@ void calc(){
     }
 }
 
-void clear()
+void Clear()
 {
 #if defined _WIN32
     system("cls");
@@ -72,7 +72,7 @@ int main()
         cout << "Do you want to calculate another one? ";
         cin >> ans;
         transform(ans.begin(), ans.end(), ans.begin(), ::tolower);
-        clear();
+        Clear();
     }
     cout << endl << "Program closing...";
     return 0;
