@@ -49,8 +49,19 @@ void calc(){
         cout << "Portal is too far \nThe max distance for level " << level << " is " << leveldist[level] << " km" << endl;
     } else {
         efficiency = 100 - (distance)/(5 * level);
-        cout << efficiency << "%" << endl;
+        cout << "Recharge Efficiency is " << efficiency << "%" << endl;
     }
+}
+
+void clear()
+{
+#if defined _WIN32
+    system("cls");
+#elif defined (__LINUX__) || defined(__gnu_linux__) || defined(__linux__)
+    system("clear");
+#elif defined (__APPLE__)
+    system("clear");
+#endif
 }
 
 int main()
@@ -61,6 +72,7 @@ int main()
         cout << "Do you want to calculate another one? ";
         cin >> ans;
         transform(ans.begin(), ans.end(), ans.begin(), ::tolower);
+        clear();
     }
     cout << endl << "Program closing...";
     return 0;
